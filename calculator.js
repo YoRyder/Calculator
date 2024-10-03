@@ -33,4 +33,43 @@ function clearDisplay() {
  currentOperator = null;
  updateDisplay();
 }
-
+function deleteNum() {
+    if (displayValue.length > 1) {
+        displayValue = displayValue.slice(0, -1);  
+    } else {
+        displayValue = '0';  
+    }
+    updateDisplay();
+   }
+   function addDecimal() {
+    if (displayValue.indexOf('.') === -1) {
+        displayValue = displayValue + '.';  
+    }
+    updateDisplay();
+   }
+   function calculateAnswer() {
+    if (firstNum !== null && currentOperator !== null) {
+       secondNum = parseFloat(displayValue);  
+    let result = 0;
+    if (currentOperator === '+') {
+       result = firstNum + secondNum;
+    } else if (currentOperator === '-') {
+        result = firstNum - secondNum;
+    } else if (currentOperator === '*') {
+        result = firstNum * secondNum;
+    } else if (currentOperator === '/') {
+    if (secondNum !== 0) {
+        result = firstNum / secondNum;  
+    } else {
+        result = 'Error';
+    }
+    } else if (currentOperator === '%') {
+        result = firstNum % secondNum;
+    }
+    displayValue = result.toString();
+    firstNum = result;  
+    currentOperator = null; 
+    secondNum = null;  
+    updateDisplay();  
+       }
+   }
