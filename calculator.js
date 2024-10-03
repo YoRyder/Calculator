@@ -47,6 +47,10 @@ function deleteNum() {
     }
     updateDisplay();
    }
+   function clearAll() {
+    let display = document.getElementById('display');
+    display.value = '';
+}
    function calculateAnswer() {
     if (firstNum !== null && currentOperator !== null) {
        secondNum = parseFloat(displayValue);  
