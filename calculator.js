@@ -1,3 +1,5 @@
+// null means no value
+
 let displayValue = '0';
 let firstNum = null;
 let secondNum = null;
@@ -15,6 +17,7 @@ function addNumber(number) {
  }
  updateDisplay();
 }
+// parseFloat function converts its first argument to a string, parses that string as a decimal number literal
 function addOperator(operator) {
  if (firstNum === null) {
   firstNum = parseFloat(displayValue);  
@@ -67,8 +70,8 @@ function deleteNum() {
     } else {
         result = 'Error';
     }
-    } else if (currentOperator === '%') {
-        result = firstNum % secondNum;
+    } else if  (currentOperator === '%') {
+      result = firstNum * (secondNum / 100);
     }
     displayValue = result.toString();
     firstNum = result;  
@@ -76,4 +79,22 @@ function deleteNum() {
     secondNum = null;  
     updateDisplay();  
        }
+   }
+   function squareNumber(){
+    if (displayValue!== '0');
+    let number = parseFloat(displayValue);
+    displayValue=(number**2).toString();
+    updateDisplay();
+   }
+    // math.Sqrt is the built in square root method
+   function squareRoot(){
+    if(displayValue!=='0'){
+        let number= parseFloat(displayValue);
+        if(number>=0){
+            displayValue= math.sqrt(number).toString();
+        }else{
+            displayValue='Error'
+        }
+        updateDisplay();
+    }
    }
