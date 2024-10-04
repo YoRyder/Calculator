@@ -67,8 +67,8 @@ function deleteNum() {
     } else {
         result = 'Error';
     }
-    } else if (currentOperator === '%') {
-        result = firstNum % secondNum;
+    } else if  (currentOperator === '%') {
+      result = firstNum * (secondNum / 100);
     }
     displayValue = result.toString();
     firstNum = result;  
@@ -76,4 +76,10 @@ function deleteNum() {
     secondNum = null;  
     updateDisplay();  
        }
+   }
+   function squareNumber(){
+    if (displayValue!== '0');
+    let number = parseFloat(displayValue);
+    displayValue=(number**2).toString();
+    updateDisplay();
    }
