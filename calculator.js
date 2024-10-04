@@ -51,8 +51,11 @@ function deleteNum() {
     updateDisplay();
    }
    function clearAll() {
-    let display = document.getElementById('display');
-    display.value = '';
+    displayValue = '0';
+    firstNum = null;
+    secondNum = null;
+    currentOperator = null;
+    updateDisplay();
 }
    function calculateAnswer() {
     if (firstNum !== null && currentOperator !== null) {
